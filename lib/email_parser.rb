@@ -1,12 +1,15 @@
-class EmailParser
-attr_accessor :emails
+require 'pry'
 
-def initialize(email)
-  @emails = email
+class EmailAddressParser
+  attr_accessor :emails
+
+
+def initialize(emails)
+  @emails = emails
 end
 
 def parse
-  emails.delete(',').split.uniq
+  @emails.split(/, | /).uniq
 end
 
 end
